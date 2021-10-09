@@ -7,10 +7,9 @@
 
 Easy and compact svelte component library to generate tree view.
 
-https://user-images.githubusercontent.com/20151526/136652230-f1fdcbbe-8976-4270-9c33-9048c256b1f7.mov
+[See Demo](https://codesandbox.io/s/svelte-tree-demo-f2ti4?file=/src/App.svelte)
 
-https://user-images.githubusercontent.com/20151526/136652113-0508cd98-5405-4d38-8c1e-6535ac61de40.mov
-
+https://user-images.githubusercontent.com/20151526/136652408-ad3a4a1b-4c89-43f0-9a9d-95e88f73fff3.mov
 ## Installation
 ```
 npm i svelte-tree-viewer
