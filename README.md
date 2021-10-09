@@ -48,7 +48,7 @@ import { TreeViewer } from "TreeViewer";
 ```
 then use it in you component
 ```
- <TreeViewer tree={tree} onSelectCallback={headingChanger}/>
+ <TreeViewer tree={tree} onSelectCallback={YOUR_CALLBACK_FUNCTION_HERE}/>
 ```
 
 This component will expect the following props
