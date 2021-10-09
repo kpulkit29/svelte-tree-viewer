@@ -4,21 +4,10 @@
 	import Fa from 'svelte-fa'
 	import { clickHandler } from './helpers/clickHandlers'
 	import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
-	export let tree
-	export let secondaryIcon
-	export let onSelectCallback
-	let secondaryIconToUse = null
-
-	/**
-	 * Import secondary icon on the fly and fetch the details
-	 * required to pass on to svelte-fa
-	*/
-	onMount(async () => {
-	  if (secondaryIcon) {
-	    let allIcons = (await import('@fortawesome/free-solid-svg-icons'))
-	    secondaryIconToUse = allIcons[secondaryIcon]
-	  }
-	})
+	export let tree;
+	export let secondaryIcon;
+	export let onSelectCallback;
+	export let faIcon;
 
 	/**
 	 * Click handler for the leaf nodes
@@ -61,8 +50,13 @@
 
 	.node-desc .chev-right, .node-desc .secondary-icon  {
 		transition: 0.4s ease-in-out;
-		margin: 1px 6px 2px 2px;
 		transform-origin: center;
+		width: 20px;
+		margin: 1px 6px 2px 2px;
+		height: 20px;
+	}
+
+	.secondary-icon img {
 		width: 20px;
 		height: 20px;
 	}
@@ -94,12 +88,18 @@
 				<div class="chev-right chevron-no-child">
 					<Fa icon={faChevronRight}/>
 				</div>
-				{#if secondaryIconToUse}
-					<div class="secondary-icon">
-						<Fa icon={secondaryIconToUse}/>
-					</div>
+				{#if secondaryIcon}
+					{#if faIcon}
+						<div class="secondary-icon">
+							<Fa icon={secondaryIcon}/>
+						</div>
+					{:else}
+						<div class="secondary-icon">
+							<img src={secondaryIcon} alt="secondaryIcon"/>
+						</div>
+					{/if}
 				{/if}
-				<div on:click={(e) => leafNodeClickHandler(e, item.key, onSelectCallback, activeElement)}>
+				<div class="desc" on:click={(e) => leafNodeClickHandler(e, item.key, onSelectCallback, activeElement)}>
 					{item.desc}
 				</div>
 			</div>
@@ -110,17 +110,23 @@
 				<div class="chev-right">
 					<Fa icon={faChevronRight}/>
 				</div>
-				{#if secondaryIconToUse}
-					<div class="secondary-icon">
-						<Fa icon={secondaryIconToUse}/>
-					</div>
+				{#if secondaryIcon}
+					{#if faIcon}
+						<div class="secondary-icon">
+							<Fa icon={secondaryIcon}/>
+						</div>
+					{:else}
+						<div class="secondary-icon">
+							<img src={secondaryIcon} alt="secondaryIcon"/>
+						</div>
+					{/if}
 				{/if}
-				<div on:click={(e) => e.stopPropagation()}>
+				<div class="desc" on:click={(e) => e.stopPropagation()}>
 					{item.desc}
 				</div>
 			</div>
 			<div class='tree-child'>
-				<svelte:self tree={item.child} secondaryIcon={secondaryIcon} onSelectCallback={onSelectCallback}/>
+				<svelte:self tree={item.child} faIcon={faIcon} secondaryIcon={secondaryIcon} onSelectCallback={onSelectCallback}/>
 			</div>
 	</div>
 	{/if}

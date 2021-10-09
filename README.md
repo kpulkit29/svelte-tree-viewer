@@ -3,8 +3,8 @@
 Easy and compact svelte component library to generate tree view.
 
 
-#Usage
-## creating a Tree structure that svelte-tree-viewer can interpret
+# Usage
+## Creating a Tree structure that svelte-tree-viewer can interpret
 
 ```
 type Node =  {
@@ -31,7 +31,6 @@ const Tree: Array<Node> = [{
     }]
   }]
 }]
- 
 ```
 Should be an array of objects where  each object denotes a tree node and can have the following properties
  - key -> a unique key name that would be forwarded as the onSelectCallback parameter. Not required on a non-leaf node.
@@ -42,11 +41,34 @@ Should be an array of objects where  each object denotes a tree node and can hav
 ```
 import { TreeViewer } from "TreeViewer";
 ```
-
+then use it in you component
+```
+ <TreeViewer tree={tree} onSelectCallback={headingChanger}/>
+```
 
 This component will expect the following props
  - tree -> Tree
  - onSelectCallback(optional): (key) => {....your implementation} -> a callback function that will be called when any leaf node is clicked
- - secondaryIcon(optional): "string"
+ - secondaryIcon(optional): Fa icon or image src
+ - faIcon: boolean ->
+                      - true: if the secondary icon is a font awesome icon
+                      - false: if it is an image url
 
 **Note: onSelectCallback will be called only when a click event is registered on the leaf nodes**
+
+##Using secondary icons
+svelte-tree-viewer supports font awesome icons and uses (svelte-fa)[https://cweili.github.io/svelte-fa/] to render those. if you want the secondary icon to be visible on the screen, then there are two possible ways to pass it on to svelte-tree-viewer
+
+1. Using font awesome
+```
+ import { faBookDead } from '@fortawesome/free-solid-svg-icons';
+
+ // Note: faIcon is true here since faBookDead is a font awesome icon
+ <TreeViewer tree={tree} secondaryIcon={faBookDead} onSelectCallback={headingChanger} faIcon={true}/>
+```
+
+2. Using custom image url
+```
+ // Note: faIcon is false here
+ <TreeViewer tree={tree} secondaryIcon={'[YOUR_IMAGE_SRC]'} onSelectCallback={headingChanger} faIcon={true}/>
+```
