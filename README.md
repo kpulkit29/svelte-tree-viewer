@@ -1,9 +1,9 @@
-#svelte-tree-viewer
+# svelte-tree-viewer
 
 Easy and compact svelte component library to generate tree view.
 
 
-# Usage
+## Usage
 ## Creating a Tree structure that svelte-tree-viewer can interpret
 
 ```
@@ -57,7 +57,7 @@ This component will expect the following props
 **Note: onSelectCallback will be called only when a click event is registered on the leaf nodes**
 
 ##Using secondary icons
-svelte-tree-viewer supports font awesome icons and uses (svelte-fa)[https://cweili.github.io/svelte-fa/] to render those. if you want the secondary icon to be visible on the screen, then there are two possible ways to pass it on to svelte-tree-viewer
+svelte-tree-viewer supports font awesome icons and uses [svelte-fa](https://cweili.github.io/svelte-fa/) to render those. if you want the secondary icon to be visible on the screen, then there are two possible ways to pass it on to svelte-tree-viewer
 
 1. Using font awesome
 ```
