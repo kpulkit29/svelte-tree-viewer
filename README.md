@@ -2,7 +2,8 @@
 
 [![Build Status](https://app.travis-ci.com/kpulkit29/svelte-tree-viewer.svg?branch=main)](https://app.travis-ci.com/kpulkit29/svelte-tree-viewer)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-https://img.badgesize.io/kpulkit29/svelte-tree-viewer/main/dist/index.mjs[.svg|png|jpg][?compression=gzip|brotli][&label=string][&max=string][&softmax=string]
+[![Bundle Size](https://img.badgesize.io/kpulkit29/svelte-tree-viewer/main/dist/index.mjs.svg?&label=size)](https://github.com/ngryman/badge-size)
+
 
 Easy and compact svelte component library to generate tree view.
 
@@ -68,11 +69,11 @@ svelte-tree-viewer supports font awesome icons and uses [svelte-fa](https://cwei
  import { faBookDead } from '@fortawesome/free-solid-svg-icons';
 
  // Note: faIcon is true here since faBookDead is a font awesome icon
- <TreeViewer tree={tree} secondaryIcon={faBookDead} onSelectCallback={headingChanger} faIcon={true}/>
+ <TreeViewer tree={tree} secondaryIcon={faBookDead} onSelectCallback={YOUR_CALLBACK_FUNCTION_HERE} faIcon={true}/>
 ```
 
 2. Using custom image url
 ```
  // Note: faIcon is false here
- <TreeViewer tree={tree} secondaryIcon={'[YOUR_IMAGE_SRC]'} onSelectCallback={headingChanger} faIcon={true}/>
+ <TreeViewer tree={tree} secondaryIcon={'[YOUR_IMAGE_SRC]'} onSelectCallback={YOUR_CALLBACK_FUNCTION_HERE} faIcon={false}/>
 ```
