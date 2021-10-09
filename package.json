@@ -4,7 +4,7 @@
   "module": "dist/index.mjs",
   "main": "dist/index.js",
   "license": "MIT",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "scripts": {
     "build": "rollup -c",
     "test": "jest src",
