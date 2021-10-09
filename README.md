@@ -1,5 +1,9 @@
 # svelte-tree-viewer
 
+[![Build Status](https://app.travis-ci.com/kpulkit29/svelte-tree-viewer.svg?branch=main)](https://app.travis-ci.com/kpulkit29/svelte-tree-viewer)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+https://img.badgesize.io/kpulkit29/svelte-tree-viewer/main/dist/index.mjs[.svg|png|jpg][?compression=gzip|brotli][&label=string][&max=string][&softmax=string]
+
 Easy and compact svelte component library to generate tree view.
 
 
