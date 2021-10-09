@@ -3,6 +3,7 @@
   "svelte": "src/index.js",
   "module": "dist/index.mjs",
   "main": "dist/index.js",
+  "license": "MIT",
   "version": "1.0.0",
   "scripts": {
     "build": "rollup -c",
@@ -33,7 +34,9 @@
     "svelte": "^3.0.0"
   },
   "keywords": [
-    "svelte"
+    "svelte",
+    "tree-view",
+    "component-library"
   ],
   "files": [
     "src",

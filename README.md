@@ -7,6 +7,14 @@
 
 Easy and compact svelte component library to generate tree view.
 
+https://user-images.githubusercontent.com/20151526/136652230-f1fdcbbe-8976-4270-9c33-9048c256b1f7.mov
+
+https://user-images.githubusercontent.com/20151526/136652113-0508cd98-5405-4d38-8c1e-6535ac61de40.mov
+
+## Installation
+```
+npm i svelte-tree-viewer
+```
 
 ## Usage
 ## Creating a Tree structure that svelte-tree-viewer can interpret
@@ -44,7 +52,7 @@ Should be an array of objects where  each object denotes a tree node and can hav
 
 ## import it in your svelte component
 ```
-import { TreeViewer } from "TreeViewer";
+import { TreeViewer } from "svelte-tree-viewer";
 ```
 then use it in you component
 ```
@@ -52,10 +60,10 @@ then use it in you component
 ```
 
 This component will expect the following props
- - tree -> Tree
- - onSelectCallback(optional): (key) => {....your implementation} -> a callback function that will be called when any leaf node is clicked
- - secondaryIcon(optional): Fa icon or image src
- - faIcon: boolean ->
+ - *tree* -> Tree
+ - *onSelectCallback(optional)*: (key) => {....your implementation} -> a callback function that will be called when any leaf node is clicked
+ - *secondaryIcon(optional)*: Fa icon or image src
+ - *faIcon*: boolean ->
                       - true: if the secondary icon is a font awesome icon
                       - false: if it is an image url
 
