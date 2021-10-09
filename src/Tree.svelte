@@ -1,5 +1,4 @@
 <script>
-	import { onMount } from 'svelte'
 	import { activeElement } from './store/index'
 	import Fa from 'svelte-fa'
 	import { clickHandler } from './helpers/clickHandlers'
